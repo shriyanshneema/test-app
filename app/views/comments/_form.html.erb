@@ -1,0 +1,13 @@
+<div class="card mx-auto w-25 mt-5">
+  <article class="card-body">
+    <%= link_to "back", :back, class: "btn btn-primary" %>
+    <header class="mt-4 mb-4"><h4 class="card-title"><%= message %></h4></header>
+
+    <div class="mb-3">
+      <%= form.label :body, class: "form-label" %>
+      <%= form.text_area :body, class: "form-control", required: true %>
+    </div>
+
+    <%= form.submit class: "btn btn-primary" %>
+  </article>
+</div>

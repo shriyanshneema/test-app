@@ -1,0 +1,29 @@
+<div class="card mx-auto w-25 mt-5">
+  <article class="card-body">
+    <%= link_to "back", :back, class: "btn btn-primary" %>
+    <header class="mt-4 mb-4"><h4 class="card-title">Sign Up</h4></header>
+    <%= form_for @user, url: registrations_path do |form| %>
+      <div class="mb-3">
+        <%= form.label :name, class: "form-label" %>
+        <%= form.text_field :name, class: "form-control" %>
+      </div>
+
+      <div class="mb-3">
+        <%= form.label :email, class: "form-label" %>
+        <%= form.email_field :email, class: "form-control", required: true %>
+      </div>
+
+      <div class="mb-3">
+        <%= form.label :password, class: "form-label" %>
+        <%= form.password_field :password, class: "form-control", required: true %>
+      </div>
+
+      <div class="mb-3">
+        <%= form.label :password_confirmation, class: "form-label" %>
+        <%= form.password_field :password_confirmation, class: "form-control", required: true %>
+      </div>
+
+      <%= form.submit class: "btn btn-primary" %>
+    <% end %>
+  </article>
+</div>

@@ -1,0 +1,17 @@
+<div class="card mx-auto w-25 mt-5">
+  <article class="card-body">
+    <%= link_to "Back", :back, class: "btn btn-primary" %>
+    <div class="mt-3">
+      <%= render "details", post: @post %>
+      <p> Description:- <%= @post.description %> </p>
+      <p> Tag:- <%= @post.tag %></p>
+    </div>
+    <% if @current_user %>
+      <% if @post.author_id == @current_user.id %>
+        <%= link_to "Edit", edit_post_path(@post), class: "btn btn-secondary" %>
+        <%= link_to "Delete", post_path(@post), method: :delete, class: "btn btn-danger" %>
+      <% end %>
+      <%= link_to "Add Comment", new_post_comment_path(@post), class: "btn btn-primary" %>
+    <% end %>
+  </article>
+</div>

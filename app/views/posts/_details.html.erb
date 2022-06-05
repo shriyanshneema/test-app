@@ -1,0 +1,4 @@
+<p> Title:- <%= post.title %> </p>
+<p> Date:- <%= post.created_at.strftime("%d/%m/%Y") %> </p>
+<p> Comments:- <%= link_to post.comments_count, post_comments_path(post) %> </p>
+<p> Author:- <%= post.author.name %> </p>

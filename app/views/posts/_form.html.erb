@@ -1,0 +1,23 @@
+<div class="card mx-auto w-25 mt-5">
+  <article class="card-body">
+    <%= link_to "back", :back, class: "btn btn-primary" %>
+    <header class="mt-4 mb-4"><h4 class="card-title"><%= message %></h4></header>
+
+    <div class="mb-3">
+      <%= form.label :title, class: "form-label" %>
+      <%= form.text_field :title, class: "form-control", required: true %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :description, class: "form-label" %>
+      <%= form.text_area :description, class: "form-control", required: true %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :tag, class: "form-label" %>
+      <%= form.select :tag, options_for_select(Post.tags.collect{ |key, value| [key.titleize, value] }, Post.tags[@post&.tag]), { prompt: "Select Tag" }, class: "form-control" %>
+    </div>
+
+    <%= form.submit class: "btn btn-primary" %>
+  </article>
+</div>

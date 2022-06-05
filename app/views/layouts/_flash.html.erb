@@ -1,0 +1,11 @@
+<% flash.each do |type, messages| %>
+  <% color_class = type.eql?("notice") ? "alert-success" : "alert-danger" %>
+  <div class="alert <%= color_class %>">
+    <ul>
+      <% messages = [].push(messages) if messages.class == String %>
+      <% messages.each do |message| %>
+        <li> <%= message %> </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

@@ -1,0 +1,23 @@
+<div class="card mx-auto w-25 mt-5">
+  <article class="card-body">
+    <header class="mb-4"><h4 class="card-title">Reset Password</h4></header>
+    <%= form_with url: password_path, method: :patch do |form| %>
+      <div class="mb-3">
+        <%= form.label :current_password, class: "form-label" %>
+        <%= form.password_field :current_password, class: "form-control", required: true %>
+      </div>
+
+      <div class="mb-3">
+        <%= form.label :new_password, class: "form-label" %>
+        <%= form.password_field :password, class: "form-control", required: true %>
+      </div>
+
+      <div class="mb-3">
+        <%= form.label :password_confirmation, class: "form-label" %>
+        <%= form.password_field :password_confirmation, class: "form-control", required: true %>
+      </div>
+
+      <%= form.submit class: "btn btn-primary" %>
+    <% end %>
+  </article>
+</div>

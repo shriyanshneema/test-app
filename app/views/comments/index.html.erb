@@ -1,0 +1,22 @@
+<%= link_to "Back", :back, class: "btn btn-primary" %>
+<% if @comments.present? %>
+  <div class="row">
+    <% @comments.each do |comment| %>
+      <div class="col-md-4">
+        <div class="card mx-auto w-50 mt-5">
+          <article class="card-body">
+            <div class="mt-3">
+              <p> Comment:- <%= link_to comment.body, comment_path(comment) %> </p>
+              <%= render "details", comment: comment %>
+            </div>
+          </article>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <div class="mt-4 p-5 bg-info text-white rounded">
+    <h1>oops currently no comment available for this post</h1>
+    <p>please add a comment</p>
+  </div>
+<% end %>
